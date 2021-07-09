@@ -1,0 +1,9 @@
+<?php
+echo'article-index';
+
+foreach ($this->articles as $article): ?>
+    <article>
+        <h3 id="post<?= $article->id ?>"><?= $article->title .' '. $article->artist ?></h3>
+    </article>
+
+<?php endforeach;
