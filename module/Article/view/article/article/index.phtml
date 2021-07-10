@@ -1,9 +1,28 @@
 <?php
-echo'article-index';
 
-foreach ($this->articles as $article): ?>
-    <article>
-        <h3 id="post<?= $article->id ?>"><?= $article->title .' '. $article->artist ?></h3>
-    </article>
 
-<?php endforeach;
+$title = 'My articles';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('article', ['action' => 'add']) ?>">Add new article</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>&nbsp;</th>
+    </tr>
+    <?php foreach ($this->articles as $article) : ?>
+        <tr>
+            <td><?= $this->escapeHtml($article->title) ?></td>
+            <td><?= $this->escapeHtml($article->artist) ?></td>
+            <td>
+                <a href="<?= $this->url('article', ['action' => 'edit', 'id' => $article->id]) ?>">Edit</a>
+                <a href="<?= $this->url('article', ['action' => 'delete', 'id' => $article->id]) ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>

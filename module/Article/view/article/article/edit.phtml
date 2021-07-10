@@ -1,2 +1,42 @@
 <?php
-echo'article-edit';
+$title = 'Edit article';
+$this->headTitle($title);
+$form = $this->form;
+?>
+    <h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+$article = $form->get('title');
+$article->setAttribute('class', 'form-control');
+$article->setAttribute('placeholder', 'Article title');
+
+$artist = $form->get('artist');
+$artist->setAttribute('class', 'form-control');
+$artist->setAttribute('placeholder', 'Artist');
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('article', [
+    'action' => 'edit',
+    'id'     => $this->id,
+]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+    <div class="form-group">
+        <?= $this->formLabel($article) ?>
+        <?= $this->formElement($article) ?>
+        <?= $this->formElementErrors()->render($article, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formLabel($artist) ?>
+        <?= $this->formElement($artist) ?>
+        <?= $this->formElementErrors()->render($artist, ['class' => 'help-block']) ?>
+    </div>
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();

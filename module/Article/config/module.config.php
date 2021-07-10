@@ -14,7 +14,7 @@ return [
 //    ],
     'router' => [
         'routes' => [
-            'album' => [
+            'article' => [
                 'type'    => Segment::class,
                 'options' => [
                     'route' => '/article[/:action[/:id]]',
