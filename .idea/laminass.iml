@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/module/Blog/src" isTestSource="false" packagePrefix="Blog\" />
+      <sourceFolder url="file://$MODULE_DIR$/module/Article/test" isTestSource="true" packagePrefix="ArticleTest\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-factory" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/event-dispatcher" />
@@ -80,7 +81,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-zendframework-bridge" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-invoker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-file-iterator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpspec/prophecy" />
@@ -101,12 +101,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php80" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/theseer/tokenizer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/cli-parser" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/complexity" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/comparator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/code-unit" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/global-state" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/exporter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/environment" />
@@ -114,7 +111,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/recursion-context" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/object-reflector" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/object-enumerator" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/lines-of-code" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/version" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/type" />
@@ -128,6 +124,14 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fig/http-message-util" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/divix1988/laminas-cli-commands" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-text" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-mvc-console" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-invoker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/complexity" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/cli-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/lines-of-code" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/code-unit" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpspec/prophecy-phpunit" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

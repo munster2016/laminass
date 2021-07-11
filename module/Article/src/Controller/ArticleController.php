@@ -17,12 +17,15 @@ class ArticleController extends \Laminas\Mvc\Controller\AbstractActionController
     }
     public function indexAction()
     {
+
         return ['articles' => $this->table->fetchAll()];
     }
 
     public function addAction()
     {
+
         $form = new ArticleForm();
+
         $form->get('submit')->setValue('Add');
 
         $request = $this->getRequest();

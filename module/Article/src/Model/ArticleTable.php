@@ -2,6 +2,7 @@
 
 namespace Article\Model;
 
+use Laminas\ServiceManager\ServiceManager;
 
 use RuntimeException;
 use Laminas\Db\TableGateway\TableGatewayInterface;
