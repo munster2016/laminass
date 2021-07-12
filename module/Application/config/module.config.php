@@ -17,7 +17,7 @@ return [
                 'options' => [
                     'route'    => '/',
                     'defaults' => [
-                        'controller' => ArticleController::class,
+                        'controller' => Controller\IndexController::class,
                         'action'     => 'index',
                     ],
                 ],
@@ -53,6 +53,35 @@ return [
         ],
         'template_path_stack' => [
             __DIR__ . '/../view',
+        ],
+    ],
+    'navigation' => [
+        'default' => [
+            [
+                'label' => 'Home',
+                'route' => 'home',
+            ],
+            [
+                'label' => 'Article',
+                'route' => 'article',
+                'pages' => [
+                    [
+                        'label'  => 'Add',
+                        'route'  => 'article',
+                        'action' => 'add',
+                    ],
+                    [
+                        'label'  => 'Edit',
+                        'route'  => 'article',
+                        'action' => 'edit',
+                    ],
+                    [
+                        'label'  => 'Delete',
+                        'route'  => 'article',
+                        'action' => 'delete',
+                    ],
+                ],
+            ],
         ],
     ],
 ];

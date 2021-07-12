@@ -18,7 +18,20 @@ class ArticleController extends \Laminas\Mvc\Controller\AbstractActionController
     public function indexAction()
     {
 
-        return ['articles' => $this->table->fetchAll()];
+       // return ['articles' => $this->table->fetchAll()];
+
+        $paginator = $this->table->fetchAll(true);
+
+        // Set the current page to what has been passed in query string,
+        // or to 1 if none is set, or the page is invalid:
+        $page = (int) $this->params()->fromQuery('page', 1);
+        $page = ($page < 1) ? 1 : $page;
+        $paginator->setCurrentPageNumber($page);
+
+        // Set the number of items per page to 10:
+        $paginator->setItemCountPerPage(10);
+
+        return new ViewModel(['paginator' => $paginator]);
     }
 
     public function addAction()

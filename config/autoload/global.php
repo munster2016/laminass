@@ -39,5 +39,22 @@ return [
         'driver_options' => [
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ]
-    ]
+    ],
+    'translator' => [
+        'locale' => 'en_US',
+        'translation_file_patterns' => [
+            [
+                'type'     => 'gettext',
+                'base_dir' => getcwd() .  '/data/language',
+                'pattern'  => '%s.mo',
+            ],
+        ],
+    ],
+    'router' => [
+        'router_class' => Laminas\Mvc\I18n\Router\TranslatorAwareTreeRouteStack::class,
+        'translator_text_domain' => 'router',
+        'routes' => [
+            /* ... */
+        ],
+    ],
 ];
