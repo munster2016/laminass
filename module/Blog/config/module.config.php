@@ -9,15 +9,17 @@ use Laminas\ServiceManager\Factory\InvokableFactory;
 return [
     'service_manager' => [
         'aliases' => [
-            Model\PostRepositoryInterface::class => Model\PostRepository::class,
         ],
         'factories' => [
-            Model\PostRepository::class => InvokableFactory::class,
+            Controller\PostController::class => Factory\PostControllerFactory::class,
+            //Model\PostRepository::class => InvokableFactory::class,
+
         ],
     ],
     'controllers' => [
         'factories' => [
-            Controller\BlogController::class => Factory\BlogControllerFactory::class,
+            Controller\PostController::class => Factory\PostControllerFactory::class,
+            Model\PostTable::class => Factory\PostTableFactory::class,
         ],
     ],
     // This lines opens the configuration for the RouteManager
@@ -30,12 +32,12 @@ return [
                 'type' => Segment::class,
                 // Configure the route itself
                 'options' => [
-                    // Listen to "/blog" as uri:
+                    // Listen to "/post" as uri:
                     'route' => '/blog[/:action]',
                     // Define default controller and action to be called when
                     // this route is matched
                     'defaults' => [
-                        'controller' => Controller\BlogController::class,
+                        'controller' => Controller\PostController::class,
                         'action'     => 'index',
                     ],
                 ],
@@ -44,7 +46,7 @@ return [
     ],
     'view_manager' => [
         'template_path_stack' => [
-            'blog' => __DIR__ . '/../view',
+            'post' => __DIR__ . '/../view',
         ],
     ],
 ];
